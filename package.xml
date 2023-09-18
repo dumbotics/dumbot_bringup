@@ -3,7 +3,7 @@
 <package format="3">
   <name>dumbot_bringup</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>The dumbot platform bringup package.</description>
   <maintainer email="email@ericcox.me">Eric Cox</maintainer>
   <license>Apache-2.0</license>
 
