@@ -12,6 +12,10 @@
       <joint name="left_wheel_joint">
         <command_interface name="velocity"/>
         <state_interface name="position"/>
+        <state_interface name="effort">
+          <!-- effort = motor_constant * current. -->
+          <param name="motor_constant">1.0</param>
+        </state_interface>
         <param name="address">128</param>
         <!--motor types must be one of M1 or M2-->
         <param name="motor_type">M2</param>
@@ -21,12 +25,21 @@
       <joint name="right_wheel_joint">
         <command_interface name="velocity"/>
         <state_interface name="position"/>
+        <state_interface name="effort">
+          <!-- effort = motor_constant * current. -->
+          <param name="motor_constant">1.0</param>
+        </state_interface>
         <param name="address">128</param>
         <!--motor types must be one of M1 or M2-->
         <param name="motor_type">M1</param>
         <!-- Number of encoder ticks per wheel rotation -->
         <param name="qppr">51200</param>
       </joint>
+      <gpio name="roboclaw">
+        <state_interface name="battery_voltage"/>
+        <state_interface name="battery_percent"/>
+        <state_interface name="temperature"/>
+      </gpio>
     </ros2_control>
 
   </xacro:macro>
