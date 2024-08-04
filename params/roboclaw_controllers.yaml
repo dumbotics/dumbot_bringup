@@ -5,8 +5,17 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
+    roboclaw_broadcaster:
+      type: roboclaw_broadcaster/RoboClawBroadcaster
+
     diffbot_base_controller:
       type: diff_drive_controller/DiffDriveController
+
+# TODO: These are not yet used
+roboclaw_broadcaster:
+  ros__parameters:
+    publish_rate: 1.0
+    roboclaw_name: roboclaw # TODO: Handle multiple roboclaw units in same interface
 
 diffbot_base_controller:
   ros__parameters:

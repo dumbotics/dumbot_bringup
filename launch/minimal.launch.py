@@ -49,11 +49,19 @@ def generate_launch_description():
         output="both",
     )
 
+    roboclaw_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["roboclaw_broadcaster", "--controller-manager", "/controller_manager"],
+        output="both",
+    )
+
     nodes = [
         ros2_control_node,
         robot_state_pub_node,
         joint_state_broadcaster_spawner,
         robot_controller_spawner,
+        roboclaw_broadcaster_spawner,
     ]
 
     return LaunchDescription(nodes)
